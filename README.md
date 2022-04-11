@@ -23,14 +23,6 @@ This article contains ideas for setting up a projects structure and a naming con
 <a name="style"></a>
 ### 1.1 Style
 
-#### If your project already has a style guide, you should follow it.
-If you are working on a project or with a team that has a pre-existing style guide, it should be respected.  Any inconsistency between an existing style guide and this guide should defer to the existing.
-
-Style guides should be living documents however and you should propose style guide changes to an existing style guide as well as this guide if you feel the change benefits all usages.
-
-> ##### *Arguments over style are pointless. There should be a style guide, and you should follow it.*
-> [_Rebecca Murphey_](https://rmurphey.com)
-
 #### All structure, assets, and code in any project should look like a single person created it, no matter how many people contributed.
 Moving from one project to another should not cause a re-learning of style and structure. Conforming to a style guide removes unneeded guesswork and ambiguities.
 
@@ -39,7 +31,7 @@ It also allows for more productive creation and maintenance as one does not need
 #### Friends do not let friends have bad style.
 If you see someone working either against a style guide or no style guide, try to correct them.
 
-When working within a team or discussing within a community, it is far easier to help and to ask for help when people are consistent. Nobody likes to help untangle someone's spaghetti code or deal with assets with names they can't understand.
+When working within the team, it is far easier to help and to ask for help when people are consistent. Nobody likes to help untangle someone's spaghetti code or deal with assets with names they can't understand.
 
 If you are helping someone who's work conforms to a different but consistent and sane style guide, you should be able to adapt to it. If they do not conform to any style guide, please direct them here.
 
@@ -56,7 +48,7 @@ Levels refer to what some people call maps or what Unity calls Scenes. A level c
 
 <a name="terms-serializable"></a>
 #### Serializable
-Variables that are Serializable are shown in the Inspector window in Unity. For more information see Unity's documentation on [Serializable](https://docs.unity3d.com/Manual/script-Serialization.html).
+Variables that are Serializable are shown in the Inspector window in Unity. They also can be written and stored outside the current session in a file or other some data structure. For more information see Unity's documentation on [Serializable](https://docs.unity3d.com/Manual/script-Serialization.html).
 
 <a name="terms-cases"></a>
 #### Cases
@@ -64,12 +56,10 @@ There are a few different ways you can name things. Here are some common casing 
 
 > ##### PascalCase
 > Capitalize every word and remove all spaces, e.g. `DesertEagle`, `StyleGuide`, `ASeriesOfWords`.
-> 
 > ##### camelCase
 > The first letter is always lowercase but every following word starts with uppercase, e.g. `desertEagle`, `styleGuide`, `aSeriesOfWords`.
->  ##### lowercase
+> ##### lowercase
 > All letters are lowercase, e.g. `deserteagle`, 
->
 > ##### Snake_case
 > Words can arbitrarily start upper or lowercase but words are separated by an underscore, e.g. `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
 
@@ -96,7 +86,7 @@ Assets
                         IonCannon
                             (Particle Systems, Textures)
                 Weapons
-            Gameplay
+            _Gameplay
                 Characters
                 Equipment
                 Input
@@ -109,25 +99,25 @@ Assets
                 Frontend
                 Act1
                     Level1
-            Lighting
+            _Lighting
                 HDRI
                 Lut
                 Textures
-            MaterialLibrary
+            _MaterialLibrary
             	Debug
             	Shaders
-            Objects
+            _Objects
                 Architecture (Single use big objects)
                     DeathStar
                 Props (Repeating objects to fill a level)
                     ObjectSets
                         DeathStar
-            Scripts
+            _Scripts
                 AI
                 Gameplay
                     Input
                 Tools
-            Sound
+            _Sound
                 Characters
                 Vehicles
                     TieFighter
