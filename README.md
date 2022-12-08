@@ -78,52 +78,54 @@ Assets
         DeveloperName
             (Work in progress assets)
     <a name="structure-top-level">ProjectName</a>
-            Characters
-            	Anakin
-            FX
-                Vehicles
-                    Abilities
-                        IonCannon
-                            (Particle Systems, Textures)
-                Weapons
-            _Gameplay
-                Characters
-                Equipment
-                Input
-                Vehicles
-                    Abilities
-                    Air
-                        TieFighter
-                            (Models, Textures, Materials, Prefabs)
-            <a name="#structure-levels">_Levels</a>
-                Frontend
-                Act1
-                    Level1
-            _Lighting
-                HDRI
-                Lut
-                Textures
-            _MaterialLibrary
+           Application
+	   Lighting
+           	HDRI
+           	Lut
+           	Textures
+            MaterialLibrary
             	Debug
             	Shaders
-            _Objects
+            Objects
+	     	Characters
+            		Anakin
+		Vehicles
+			Abilities
+				Ground
+                    		Air
+                        		TieFighter
+                        		(Models, Textures, Materials, Prefabs)
+            	FX        
+        	        Weapons
+				IonCannon
+	                        (Particle Systems, Textures)
                 Architecture (Single use big objects)
                     DeathStar
                 Props (Repeating objects to fill a level)
                     ObjectSets
-                        DeathStar
-            _Scripts
-                AI
-                Gameplay
-                    Input
+	            DeathStar
+            <a name="#structure-levels">Scenes</a>
+	    	General
+                Act1
+                    Level1
+            Scripts
+	    	Application
+	    	AI
+	   	Gameplay
+                	Characters
+                	Equipment
+                	Input             
                 Tools
-            _Sound
+	    Settings [.asset files]
+            Sound
                 Characters
                 Vehicles
                     TieFighter
                         Abilities
                             Afterburners
                 Weapons
+		Music
+		Misc
             UI
                 Art
                     Buttons
@@ -131,9 +133,8 @@ Assets
                     Fonts
     ExpansionPack (DLC)
     Plugins
-    ThirdPartySDK  
+    [ThirdPartySDK] (on Top Level depending on conditions)
 </pre>
-
 
 
 
@@ -250,13 +251,13 @@ If these modular assets were placed in a Developer folder, the world builder sho
 Once the assets are ready for use, an artist simply has to move the assets into the project specific folder. This is essentially 'promoting' the assets from experimental to production.
 
 
-<a name="levels"></a>
-### 2.4 All [Scene](#terms-level-map) Files Belong In A Folder Called Levels
-Level files are incredibly special and it is common for every project to have its own map naming system, especially if they work with sub-levels or streaming levels. No matter what system of map organization is in place for the specific project, all levels should belong in `Assets/ProjectNameName/Levels`.
+<a name="Scenes"></a>
+### 2.4 All [Scene](#terms-level-map) Files Belong In A Folder Called Scenes
+Scenes files are incredibly special and it is common for every project to have its own map naming system, especially if they work with sub-Scenes or streaming Scenes. No matter what system of map organization is in place for the specific project, all Scenes should belong in `Assets/ProjectNameName/Scenes`.
 
-Being able to tell someone to open a specific map without having to explain where it is is a great time saver and general 'quality of life' improvement. It is common for levels to be within sub-folders of `Levels`, such as `Levels/Campaign1/` or `Levels/Arenas`, but the most important thing here is that they all exist within `Assets/ProjectNameName/Levels`.
+Being able to tell someone to open a specific map without having to explain where it is is a great time saver and general 'quality of life' improvement. It is common for Scenes to be within sub-folders of `Scenes`, such as `Scenes/Campaign1/` or `Scenes/Arenas`, but the most important thing here is that they all exist within `Assets/ProjectNameName/Scenes`.
 
-This also simplifies the job of cooking for engineers. Wrangling levels for a build process can be extremely frustrating if they have to dig through arbitrary folders for them. If a team's levels are all in one place, it is much harder to accidentally not cook a map in a build. It also simplifies lighting build scripts as well QA processes.
+This also simplifies the job of cooking for engineers. Wrangling Scenes for a build process can be extremely frustrating if they have to dig through arbitrary folders for them. If a team's Scenes are all in one place, it is much harder to accidentally not cook a map in a build. It also simplifies lighting build scripts as well QA processes.
 
 <a name="2.5"></a>
 <a name="structure-ownership"></a>
